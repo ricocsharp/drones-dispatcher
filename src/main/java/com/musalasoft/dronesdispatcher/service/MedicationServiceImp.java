@@ -1,6 +1,6 @@
 package com.musalasoft.dronesdispatcher.service;
 
-import com.musalasoft.dronesdispatcher.data.model.Medication;
+import com.musalasoft.dronesdispatcher.data.entities.Medication;
 import com.musalasoft.dronesdispatcher.data.repository.MedicationRepository;
 import com.musalasoft.dronesdispatcher.util.ImageUtil;
 import lombok.extern.slf4j.Slf4j;

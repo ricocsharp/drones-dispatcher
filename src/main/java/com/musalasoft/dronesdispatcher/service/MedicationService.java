@@ -1,6 +1,6 @@
 package com.musalasoft.dronesdispatcher.service;
 
-import com.musalasoft.dronesdispatcher.data.model.Medication;
+import com.musalasoft.dronesdispatcher.data.entities.Medication;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import java.io.IOException;

@@ -1,7 +1,6 @@
 package com.musalasoft.dronesdispatcher.service;
 
-import com.musalasoft.dronesdispatcher.data.model.Drone;
-import com.musalasoft.dronesdispatcher.data.model.Medication;
+import com.musalasoft.dronesdispatcher.data.entities.Drone;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import java.io.IOException;
@@ -13,5 +12,5 @@ public interface DroneService {
     List<Drone> GetDrones(@RequestParam(required = false) String name);
     void Delete(Long id);
     void DeleteAll();
-    Boolean CheckBattery(Long id);
+
 }

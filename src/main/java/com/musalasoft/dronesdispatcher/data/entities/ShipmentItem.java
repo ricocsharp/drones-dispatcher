@@ -1,4 +1,4 @@
-package com.musalasoft.dronesdispatcher.data.model;
+package com.musalasoft.dronesdispatcher.data.entities;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -8,17 +8,21 @@ import lombok.NoArgsConstructor;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "batterychargelogs")
+@Table(name = "shipmentitems")
 @Data
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class BatteryChargeLog {
+public class ShipmentItem {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "id", nullable = false)
     private Long id;
-    private Double bateryChargeLevel;
+
     @OneToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "drone_id", nullable = false)
-    private Drone drone;
+    @JoinColumn(name = "medication_id", nullable = false)
+    private Medication medication;
+    private Double quantity;
+    @ManyToOne
+    Shipment shipment;
 }

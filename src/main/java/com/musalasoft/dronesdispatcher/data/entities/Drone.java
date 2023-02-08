@@ -1,4 +1,4 @@
-package com.musalasoft.dronesdispatcher.data.model;
+package com.musalasoft.dronesdispatcher.data.entities;
 
 import com.musalasoft.dronesdispatcher.config.DroneModelEnum;
 import com.musalasoft.dronesdispatcher.config.DroneStateEnum;
@@ -29,5 +29,10 @@ public class Drone {
             cascade =  CascadeType.ALL,
             mappedBy = "drone")
     private BatteryChargeLog chargelog;
+
+    @OneToOne(fetch = FetchType.LAZY,
+            cascade =  CascadeType.ALL,
+            mappedBy = "drone")
+    private Shipment shipment;
 
 }

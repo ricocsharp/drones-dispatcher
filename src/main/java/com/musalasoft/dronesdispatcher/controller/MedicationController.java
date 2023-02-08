@@ -1,6 +1,6 @@
 package com.musalasoft.dronesdispatcher.controller;
 
-import com.musalasoft.dronesdispatcher.data.model.Medication;
+import com.musalasoft.dronesdispatcher.data.entities.Medication;
 import com.musalasoft.dronesdispatcher.service.MedicationServiceImp;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import javax.validation.constraints.Pattern;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 

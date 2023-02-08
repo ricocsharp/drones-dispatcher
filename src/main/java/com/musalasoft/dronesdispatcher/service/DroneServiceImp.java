@@ -1,10 +1,7 @@
 package com.musalasoft.dronesdispatcher.service;
 
-import com.musalasoft.dronesdispatcher.data.model.Drone;
-import com.musalasoft.dronesdispatcher.data.model.Medication;
+import com.musalasoft.dronesdispatcher.data.entities.Drone;
 import com.musalasoft.dronesdispatcher.data.repository.DronesRepository;
-import com.musalasoft.dronesdispatcher.data.repository.MedicationRepository;
-import com.musalasoft.dronesdispatcher.util.ImageUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -66,13 +63,5 @@ public class DroneServiceImp implements DroneService {
     @Override
     public void DeleteAll() {
         dronesRepository.deleteAll();
-    }
-
-    @Override
-    public Boolean CheckBattery(Long id) {
-        Optional<Drone> drone = Optional.of(dronesRepository.getById(id));
-        if(!drone.isPresent())
-            return false;
-        return drone.get().getBatteryCapacity()<25?Boolean.FALSE:Boolean.TRUE;
     }
 }

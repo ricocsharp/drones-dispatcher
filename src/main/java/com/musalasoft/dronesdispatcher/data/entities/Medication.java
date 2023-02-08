@@ -1,4 +1,4 @@
-package com.musalasoft.dronesdispatcher.data.model;
+package com.musalasoft.dronesdispatcher.data.entities;
 
 import lombok.*;
 

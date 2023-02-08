@@ -1,17 +1,14 @@
 package com.musalasoft.dronesdispatcher.controller;
 
-import com.musalasoft.dronesdispatcher.data.model.Drone;
-import com.musalasoft.dronesdispatcher.data.model.Medication;
+import com.musalasoft.dronesdispatcher.data.entities.Drone;
 import com.musalasoft.dronesdispatcher.service.DroneServiceImp;
-import com.musalasoft.dronesdispatcher.service.MedicationServiceImp;
+import com.musalasoft.dronesdispatcher.service.OperationsServiceImp;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.multipart.MultipartFile;
 
-import javax.validation.constraints.Pattern;
 import java.io.IOException;
 import java.util.List;
 import java.util.Optional;
@@ -21,6 +18,7 @@ import java.util.Optional;
 @Validated
 public class DronesController {
     private DroneServiceImp droneService;
+    private OperationsServiceImp operationsService;
 
     @ResponseStatus(value = HttpStatus.OK)
     @PostMapping("/drone")
@@ -88,7 +86,7 @@ public class DronesController {
     @GetMapping("/drone/checkbattery/{id}")
     public ResponseEntity<Boolean> CheckBatteryLevel(@RequestParam(required = true) Long id){
         try {
-            return ResponseEntity.status(HttpStatus.OK).contentType(MediaType.APPLICATION_JSON).body(droneService.CheckBattery(id));
+            return ResponseEntity.status(HttpStatus.OK).contentType(MediaType.APPLICATION_JSON).body(operationsService.CheckBattery(id));
         } catch (Exception e) {
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }

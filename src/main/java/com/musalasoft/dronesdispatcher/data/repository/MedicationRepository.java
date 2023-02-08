@@ -1,6 +1,6 @@
 package com.musalasoft.dronesdispatcher.data.repository;
 
-import com.musalasoft.dronesdispatcher.data.model.Medication;
+import com.musalasoft.dronesdispatcher.data.entities.Medication;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;
