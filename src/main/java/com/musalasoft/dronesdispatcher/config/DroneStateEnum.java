@@ -4,6 +4,8 @@ import java.util.HashMap;
 import java.util.Map;
 
 public enum DroneStateEnum {
+
+    EXHAUSTED ("EXHAUSTED "),
     IDLE("IDLE"),
     LOADING("LOADING"),
     LOADED("LOADED"),

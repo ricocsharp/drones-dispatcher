@@ -28,11 +28,6 @@ public class Drone {
     @OneToOne(fetch = FetchType.LAZY,
             cascade =  CascadeType.ALL,
             mappedBy = "drone")
-    private BatteryChargeLog chargelog;
-
-    @OneToOne(fetch = FetchType.LAZY,
-            cascade =  CascadeType.ALL,
-            mappedBy = "drone")
     private Shipment shipment;
 
 }

@@ -19,7 +19,7 @@ public class Shipment {
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id", nullable = false)
     private Long id;
-    private Date eta;
+    private Date ETA;
     private Date departureDate;
     @OneToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "drone_id", nullable = false)

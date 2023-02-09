@@ -49,7 +49,7 @@ public class DroneServiceImp implements DroneService {
             if (name == null)
                 dronesRepository.findAll().forEach(drones::add);
             else
-                dronesRepository.findByNameContaining(name).forEach(drones::add);
+                dronesRepository.findByModelContaining(name).forEach(drones::add);
             return drones;
         } catch (Exception ex) {
             logger.error("Error detected gettting medication's list",ex);
